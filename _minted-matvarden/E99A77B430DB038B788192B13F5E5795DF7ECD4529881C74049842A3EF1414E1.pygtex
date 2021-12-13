@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c}{\PYGZpc{} generera 1000 mätvärden $x_i$ med $\mu=0$ och $\sigma=1$}
+\PYG{n}{x} \PYG{p}{=} \PYG{n}{normrnd}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{m} \PYG{p}{=} \PYG{n}{mean}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} medelvärde $\bar{x}=0.012431$}
+\PYG{n}{u} \PYG{p}{=} \PYG{n}{std}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} standardavvikelse $u(x)=0.973136$}
+
+\PYG{c}{\PYGZpc{} standardosäkerhet i medelvärdet}
+\PYG{n}{um} \PYG{p}{=} \PYG{n}{u}\PYG{o}{/}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} $u(\bar{x})=0.030773$}
+
+\PYG{c}{\PYGZpc{} upprepa experimentet 500 gånger}
+\PYG{n}{means} \PYG{p}{=} \PYG{n+nb}{zeros}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{for} \PYG{n+nb}{i}\PYG{p}{=}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{means}\PYG{p}{)}
+\PYG{c}{\PYGZpc{} generera 1000 mätvärden x\PYGZus{}i med mu=0 och sigma=1}
+    \PYG{n}{x} \PYG{p}{=} \PYG{n}{normrnd}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n}{means}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{)} \PYG{p}{=} \PYG{n}{mean}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} beräkna medelvärdet}
+\PYG{k}{end}
+
+\PYG{c}{\PYGZpc{} spridningen i medelvärdet från många experiment}
+\PYG{n}{umeans} \PYG{p}{=} \PYG{n}{std}\PYG{p}{(}\PYG{n}{means}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} $u(\bar{x})=0.031604$}
+\end{Verbatim}

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{a} \PYG{p}{=} \PYG{n}{inv}\PYG{p}{(}\PYG{n}{G}\PYG{p}{)}\PYG{o}{*}\PYG{n}{h} \PYG{c}{\PYGZpc{} de anpassade parametrarna $a = (a_0,\ldots,a_m)^\top$}
+\PYG{n}{S} \PYG{p}{=} \PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{a}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZsq{}}\PYG{p}{(}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{a}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} kvadratsumman $S(a)$}
+\PYG{n}{n} \PYG{p}{=} \PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{;} \PYG{n}{m} \PYG{p}{=} \PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} \PYGZsh{}mätvärden $n$ och \PYGZsh{}parametrar $m$}
+\PYG{n}{ua} \PYG{p}{=} \PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n+nb}{diag}\PYG{p}{(}\PYG{n}{inv}\PYG{p}{(}\PYG{n}{G}\PYG{p}{)}\PYG{p}{)}\PYG{o}{*}\PYG{n}{S}\PYG{o}{/}\PYG{p}{(}\PYG{n}{n} \PYG{o}{\PYGZhy{}} \PYG{n}{m}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;} \PYG{c}{\PYGZpc{} vector med osäkerheterna $u(a) = (u(a_1),\ldots,u(a_m)^\top$}
+\end{Verbatim}

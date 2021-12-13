@@ -1,0 +1,13 @@
+I Matlab tar allt ovanstående den relativt kompakta formen:
+        \begin{minted}[frame=leftline,framesep=2mm,autogobble,escapeinside=||]{matlab}
+            % mätdata |$\{x_i, y_i \pm u_i\}$| som kolonnvektorer
+            x = [|\ldots|]'; y = [|\ldots|]'; u = [|\ldots|]';
+            X = [x.^0, x.^1, |\ldots|]; % designmatrisen |$X$|
+
+            % kovariansmatrisen |$\Sigma$|, samt inversen |$\Sigma^{-1}$|
+            V = diag(u.^2); iV = inv(V);
+            J = inv(X'*iV*X)*X'*iV; % Jacobianen |$\mathcal{J}$|
+            a = J*y; % de anpassade parametrarna |$a$|
+            Va = J*V*J' % kovariansmatrisen |$\Sigma_a$|
+            ua = sqrt(diag(Va)); % mätosäkerheter |$u_a$|
+        \end{minted}

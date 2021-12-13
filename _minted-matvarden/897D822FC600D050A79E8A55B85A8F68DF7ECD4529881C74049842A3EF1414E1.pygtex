@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{t} \PYG{p}{=} \PYG{p}{[}\PYG{l+m+mf}{1.06} \PYG{l+m+mf}{2.01} \PYG{l+m+mf}{2.98} \PYG{l+m+mf}{3.96} \PYG{l+m+mf}{5.02} \PYG{l+m+mf}{6.02}\PYG{p}{]}\PYG{p}{;} \PYG{c}{\PYGZpc{} mätdata $t_i$}
+\PYG{n}{m} \PYG{p}{=} \PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{;} \PYG{c}{\PYGZpc{} antal interval $m$}
+
+\PYG{c}{\PYGZpc{} t(m+1:2*m) ger övre mätserien $[t_{m+1},t_{2m}]$}
+\PYG{c}{\PYGZpc{} t(1:m) ger undre mätserien $[t_1,t_m]$}
+\PYG{n}{T} \PYG{p}{=} \PYG{p}{(} \PYG{n}{t}\PYG{p}{(}\PYG{n}{m}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{m}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{t}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{m}\PYG{p}{)} \PYG{p}{)}\PYG{o}{/}\PYG{n}{m}\PYG{p}{;} \PYG{c}{\PYGZpc{} ny mätserie $T_i = (t_{m+i} - t_i)/m$}
+
+\PYG{c}{\PYGZpc{} medelvärdet och dess osäkerhetet beräknas som vanligt}
+\PYG{n}{mT} \PYG{p}{=} \PYG{n}{mean}\PYG{p}{(}\PYG{n}{T}\PYG{p}{)}\PYG{p}{;}
+\PYG{n}{umT} \PYG{p}{=} \PYG{n}{std}\PYG{p}{(}\PYG{n}{T}\PYG{p}{)}\PYG{o}{/}\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)}\PYG{p}{;}
+\end{Verbatim}

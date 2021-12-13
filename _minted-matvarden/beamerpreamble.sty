@@ -1,0 +1,207 @@
+usepackage{graphicx}
+\usefonttheme{professionalfonts}
+
+% lualatex
+% \usepackage{fontspec}
+% \usepackage{unicode-math}
+
+% pdflatex
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{diagbox,makecell}
+\usepackage{siunitx}
+
+% for code and stuff
+\usepackage{minted}
+\usemintedstyle{vs}
+\setminted{frame=leftline,framesep=2mm,autogobble,fontsize=\small}
+
+% better ttfonts
+\renewcommand{\ttdefault}{cmtt}
+
+% \setmainfont[Ligatures=TeX]{XITS}
+% \setsansfont[Ligatures=TeX]{Linux Biolinum O}
+% \setmonofont[Ligatures=TeX,Scale=MatchLowercase]{Linux Libertine Mono O}
+% \setmathfont[Ligatures=TeX]{XITS Math}
+% \setmathfont[Ligatures=TeX,range=\mathit/{latin,Latin,greek,Greek}]{Linux Biolinum O Italic}
+% \setmathfont[Ligatures=TeX,range={\mathup}]{Linux Biolinum O}
+
+% \usetheme{Warsaw}
+
+
+\mode<presentation>
+
+% \useinnertheme[shadow=true]{rounded}
+\useinnertheme[shadow=false]{rounded}
+% \useoutertheme{shadow}
+\useoutertheme{myouter}
+\usecolortheme{orchid}
+\usecolortheme{whale}
+
+\setbeamerfont{block title}{size={}}
+
+\mode
+<all>
+
+
+
+\usecolortheme{beaver}
+
+
+% \setbeamertemplate{footline}
+% {%
+%   \leavevmode%
+%   \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+%           \usebeamerfont{author in head/foot}\insertshortauthor{}
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+%       \usebeamerfont{title in head/foot}\insertshorttitle{}\hfill\insertframenumber~/~\inserttotalframenumber
+%   \end{beamercolorbox}}%
+%   \vskip0pt%
+% }
+
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamerfont{myTOC}{series=\bfseries,size=\Large}
+%\AtBeginSection[]{\frame{\frametitle{Outline}%
+%                  \usebeamerfont{myTOC}\tableofcontents[current]}}
+
+% \newcommand*\oldmacro{}%
+% \let\oldmacro\insertshorttitle%
+% \renewcommand\insertshorttitle{%
+%     \oldmacro\hfill%
+%     \insertframenumber}
+
+\newcommand{\backupbegin}{%
+    \newcounter{finalframe}
+    \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{%
+    \setcounter{framenumber}{\value{finalframe}}
+}
+
+
+\newcommand{\fullpage}[1]{%
+  \begin{frame}[plain,c,noframenumbering]
+    \begin{center}
+      \Huge #1
+    \end{center}
+  \end{frame}
+}
+
+\newcommand{\uulogo}{%
+    \begin{figure}
+        \centering
+        \includegraphics{/home/max/texmf/tex/latex/beamerpreamble/UU_logo_2f_20.pdf}
+    \end{figure}
+}
+
+\newcommand{\atlaslogo}{%
+    \begin{figure}
+        \centering
+        \includegraphics[width=14mm]{/home/max/texmf/tex/latex/beamerpreamble/AT_atlaslogo_2015.pdf}
+    \end{figure}
+}
+
+\newcommand{\logos}{%
+    \begin{columns}[c]
+        \column{.5\textwidth}
+            \begin{figure}
+                \centering
+                \flushright%
+                \includegraphics{/home/max/texmf/tex/latex/beamerpreamble/UU_logo_2f_20.pdf}%
+                \hspace{-2em}
+            \end{figure}
+        \column{.5\textwidth}
+            \begin{figure}
+                \centering
+                \flushleft%
+                \includegraphics[width=14mm]{/home/max/texmf/tex/latex/beamerpreamble/AT_atlaslogo_2015.pdf}
+            \end{figure}
+    \end{columns}
+}
+
+\newlength{\imageheight}
+\newcommand{\splitimage}[1]{%
+    {%
+    \begin{columns}[T]
+        \settoheight{\imageheight}{\includegraphics{#1}}
+        \column{.5\textwidth}
+            \centering
+            \includegraphics[trim=0 0.5\imageheight{} 0 0, clip, width=\textwidth]{#1}
+        \column{.5\textwidth}
+            \centering
+            \includegraphics[trim=0 0 0 0.5\imageheight{}, clip, width=\textwidth]{#1}
+    \end{columns}
+    }%
+}
+
+\newcommand{\dirtysplit}[1]{%
+    {%
+    \begin{columns}[T]
+        \settoheight{\imageheight}{\includegraphics{#1}}
+        \column{.33\textwidth}
+            \includegraphics[trim=0 0.6666\imageheight{} 0 0, clip, width=1.4\textwidth]{#1}
+        \column{.33\textwidth}
+            \includegraphics[trim=0 0.3333\imageheight{} 0 0.3333\imageheight{}, clip, width=1.4\textwidth]{#1}
+        \column{.33\textwidth}
+            \includegraphics[trim=0 0 0 0.6666\imageheight{}, clip, width=1.4\textwidth]{#1}
+    \end{columns}
+    }%
+}
+
+
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+% \setbeamertemplate{title page}[default][rounded=true]
+
+% \setbeamertemplate{upper separation line head}[shadow=false]
+% \setbeamertemplate{middle separation line head}[shadow=false]
+% \setbeamertemplate{lower separation line head}[shadow=false]
+% \setbeamertemplate{upper separation line foot}[shadow=false]
+% \setbeamertemplate{middle separation line foot}[shadow=false]
+% \setbeamertemplate{lower separation line foot}[shadow=false]
+
+\definecolor{darkblue}{rgb}{0,0,0.8}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{purple}{rgb}{0.5,0,0.5}
+
+\definecolor{darkred}{rgb}{0.8,0,0}
+\definecolor{gray3}{RGB}{242,241,239}
+\definecolor{gray2}{RGB}{236,240,241}
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[triangle]
+
+\setbeamercolor*{itemize item}{fg=darkred!80!gray}
+\setbeamercolor*{itemize subitem}{fg=darkred!80!gray}
+\setbeamercolor*{itemize subsubitem}{fg=darkred!80!gray}
+
+\setbeamercolor*{block title}{fg=white,bg=darkred}
+\setbeamercolor*{block body}{fg=black,bg=gray3}
+\setbeamercolor*{block body example}{bg=gray3}
+
+\setbeamertemplate{enumerate item}[default]
+\setbeamertemplate{enumerate subitem}[default]
+\setbeamertemplate{enumerate subsubitem}[default]
+
+\setbeamercolor*{enumerate item}{fg=darkred!80!gray}
+\setbeamercolor*{enumerate subitem}{fg=darkred!80!gray}
+\setbeamercolor*{enumerate subsubitem}{fg=darkred!80!gray}
+
+\setbeamercolor*{description item}{fg=darkred!80!gray}
+\setbeamercolor*{description subitem}{fg=darkred!80!gray}
+\setbeamercolor*{description subsubitem}{fg=darkred!80!gray}
+
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}

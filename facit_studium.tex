@@ -1,0 +1,88 @@
+\documentclass[9pt]{beamer}
+\usepackage{beamerpreamble}
+\usepackage[swedish]{babel}
+\usepackage{minted}
+\usepackage{comment}
+\usemintedstyle{vs}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{textgreek}
+\usepackage{dirtytalk}
+\usepackage{comment}
+
+\renewcommand{\ttdefault}{cmtt}
+
+\newcommand*\mean[1]{\bar{#1}}
+
+\title{Datalaboration - Förberedande tutorial}
+\author[benjamin.eriksson@physics.uu.se]{Benjamin Eriksson  \\ \tiny{med inspiration från} \\ \scriptsize{Slides av M. Isacson, M. Ellert, M. Olvegård, och B. Lindgren}}
+\institute[Uppsala universitet]{{\small Avdelningen för tillämpad kärnfysik \\ Institutionen för fysik och astronomi} \\ \uulogo}
+\date{{\small Reviderad}\\ \today}
+
+\begin{document}
+\begin{frame}{}
+    Hur ser matrisen $CD$ ut efter att du utfört elementvis multiplikation?
+    \begin{equation*}
+        C. * D = 
+        \begin{pmatrix}
+        9 & 16  & 21 \\ 
+        24 & 25 & 24 \\ 
+        21 & 16 & 9 
+        \end{pmatrix}
+    \end{equation*}  
+\end{frame}
+
+\begin{frame}{}
+    Vad är standardavvikelsen $u(x)$?
+    \begin{itemize}
+        \item Mellan 0.07 och 0.074 ger rätt svar.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    Vad är standardosäkerheten i medelvärdet $u(\bar{x}$?
+    \begin{itemize}
+        \item Mellan 0.03 och 0.033 ger rätt svar.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    Välj de alternativ där temperaturen och dess osäkerhet presenteras enligt tumregeln.
+    \begin{itemize}
+        \item $T = 15.32 \pm 0.64$
+        \item $T = 15.32(64)$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    Vad är den propagerade osäkerheten i $F$?
+    \begin{equation*}
+        u_F = \sqrt{\left(u_{m_j}\frac{Gm_s}{r^2}\right)^2 + \left(u_{m_s} \frac{Gm_j}{r^2}\right)^2 + \left(u_r \frac{2Gm_jm_s}{r^3}\right)^2}
+    \end{equation*}
+\end{frame}
+
+\begin{frame}{}
+    Vilka alternativ är sanna för kvadratsumman S?
+    \begin{itemize}
+        \item $0 \leq S \leq \infty$
+        \item Ju mindre S är, desto mindre är summan av avstånden från datapunkter till modellen.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    Antag att vi vill utföra en minstakvadratanpassning av modellen $f(x) = a_1 + a_2x_i - a_3x_i^2$ på våra uppmätta data ${x_i, y_i}$. Välj de alternativ som är sanna.
+    \begin{itemize}
+        \item $S = \sum\limits_i \left( y_i - a_1 - a_2x_i - a_3x_i^2\right)^2$
+        \item För att hitta $a_1$, $a_2$, $a_3$ minimerar vi $S$ genom att bilda ett ekvationssystem från $\frac{\partial S}{\partial a_1} = 0$, $\frac{\partial S}{\partial a_2} = 0$ och $\frac{\partial S}{\partial a_3} = 0$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    \begin{center}
+        All feedback uppskattas och bidrar till att förbättra W-programmet!
+    \end{center}
+    
+\end{frame}
+
+
+\end{document}
